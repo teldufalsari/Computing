@@ -33,7 +33,7 @@ def GaussSel(a : np.array, f : np.array):
     #Прямой ход алгоритма
     for i in range(0, n):
         #Выбираем наибольший элемент текущего столбца
-        k = np.argmax(a[i:,i]) + i #Лютый костыль конечно, но что поделать
+        k = np.argmax(abs(a[i:,i])) + i #Лютый костыль конечно, но что поделать
         a[[k, i]] = a [[i, k]]
         f[[k, i]] = f [[i, k]]
         for j in range(i + 1, n):
